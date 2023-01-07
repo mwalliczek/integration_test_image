@@ -2,11 +2,6 @@ FROM ubuntu:22.04
 
 ARG DEBIAN_FRONTEND=noninteractive
 
-RUN { \
-		echo "mariadb-server-10" mysql-server/root_password password 'unused'; \
-		echo "mariadb-server-10" mysql-server/root_password_again password 'unused'; \
-	} | debconf-set-selections;
-
 RUN apt-get update && \
     apt-get install --no-install-recommends -qy curl wget unzip openssh-client openjdk-11-jre-headless mariadb-server maven chromium-browser
     
@@ -35,7 +30,7 @@ RUN rm -rf /var/lib/mysql; \
 	if [ -L /etc/mysql/my.cnf ]; then \
 # 10.5+
 		sed -i -e '/includedir/ {N;s/\(.*\)\n\(.*\)/\n\2\n\1/}' /etc/mysql/mariadb.cnf; \
-	fi \
+	fi; \
 	mysql_install_db --user=mysql --ldata=/var/lib/mysql > /dev/null
 
 # Command prompt
