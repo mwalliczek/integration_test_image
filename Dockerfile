@@ -11,6 +11,9 @@ RUN apt-get install -qy nodejs
 # Setting up NodeJs
 RUN npm install -g npm@8.3.1
 
+RUN wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb &&\
+    dpkg -i google-chrome-stable_current_amd64.deb;
+
 RUN wget https://github.com/keycloak/keycloak/releases/download/20.0.2/keycloak-20.0.2.zip
 RUN unzip keycloak-20.0.2.zip
 RUN rm keycloak-20.0.2.zip
