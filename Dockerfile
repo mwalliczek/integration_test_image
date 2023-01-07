@@ -35,7 +35,8 @@ RUN rm -rf /var/lib/mysql; \
 	if [ -L /etc/mysql/my.cnf ]; then \
 # 10.5+
 		sed -i -e '/includedir/ {N;s/\(.*\)\n\(.*\)/\n\2\n\1/}' /etc/mysql/mariadb.cnf; \
-	fi
+	fi \
+	mysql_install_db --user=mysql --ldata=/var/lib/mysql > /dev/null
 
 # Command prompt
 CMD /bin/bash
