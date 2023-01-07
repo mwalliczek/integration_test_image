@@ -13,6 +13,7 @@ RUN npm install -g npm@8.3.1
 
 RUN wget https://github.com/keycloak/keycloak/releases/download/20.0.2/keycloak-20.0.2.zip
 RUN unzip keycloak-20.0.2.zip
+RUN rm keycloak-20.0.2.zip
 
 # Command prompt
 CMD /bin/bash
