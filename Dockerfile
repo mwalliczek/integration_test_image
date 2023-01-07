@@ -15,5 +15,7 @@ RUN wget https://github.com/keycloak/keycloak/releases/download/20.0.2/keycloak-
 RUN unzip keycloak-20.0.2.zip
 RUN rm keycloak-20.0.2.zip
 
+RUN rm -rf /var/lib/mysql && mkdir /var/lib/mysql
+
 # Command prompt
 CMD /bin/bash
