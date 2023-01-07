@@ -2,6 +2,11 @@ FROM ubuntu:22.04
 
 ARG DEBIAN_FRONTEND=noninteractive
 
+RUN { \
+		echo "mariadb-server-10" mysql-server/root_password password 'unused'; \
+		echo "mariadb-server-10" mysql-server/root_password_again password 'unused'; \
+	} | debconf-set-selections;
+
 RUN apt-get update && \
     apt-get install --no-install-recommends -qy curl wget unzip openssh-client openjdk-11-jre-headless mariadb-server maven chromium-browser
     
