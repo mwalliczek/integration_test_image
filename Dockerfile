@@ -3,7 +3,7 @@ FROM ubuntu:22.04
 ARG DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && \
-    apt-get install -qy curl wget sudo unzip openssh-client openjdk-11-jre-headless mariadb-server maven chromium-browser
+    apt-get install -qy curl wget unzip openssh-client openjdk-11-jre-headless mariadb-server maven chromium-browser
     
 RUN curl -sL https://deb.nodesource.com/setup_16.x | sh
 RUN apt-get install -qy nodejs
@@ -15,7 +15,7 @@ RUN wget https://github.com/keycloak/keycloak/releases/download/20.0.2/keycloak-
 RUN unzip keycloak-20.0.2.zip
 RUN rm keycloak-20.0.2.zip
 
-RUN rm -rf /var/lib/mysql && mkdir /var/lib/mysql
+RUN rm -rf /var/lib/mysql && mkdir /var/lib/mysql && chown mysql:mysql /var/lib/mysql
 
 # Command prompt
 CMD /bin/bash
