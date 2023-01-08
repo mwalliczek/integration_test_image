@@ -3,7 +3,7 @@ FROM debian:testing
 ARG DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && \
-    apt-get install --no-install-recommends -qy curl openssh-client openjdk-11-jre-headless mariadb-server chromium maven
+    apt-get install --no-install-recommends -qy curl openssh-client openjdk-17-jre-headless mariadb-server chromium maven
     
 RUN curl -sL https://deb.nodesource.com/setup_16.x | sh
 RUN apt-get install -qy nodejs
