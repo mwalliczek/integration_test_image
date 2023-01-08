@@ -6,7 +6,7 @@ RUN apt-get update && \
     apt-get install --no-install-recommends -qy curl openssh-client openjdk-17-jre-headless mariadb-server chromium maven
     
 RUN curl -sL https://deb.nodesource.com/setup_16.x | sh
-RUN apt-get install -qy nodejs
+RUN apt-get install --no-install-recommends -qy nodejs npm
 
 # Setting up NodeJs
 RUN npm install -g npm@8.3.1
