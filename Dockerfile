@@ -5,11 +5,11 @@ ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && \
     apt-get install --no-install-recommends -qy curl openssh-client openjdk-17-jre-headless mariadb-server chromium maven nginx
     
-RUN curl -sL https://deb.nodesource.com/setup_16.x | sh
-RUN apt-get install --no-install-recommends -qy nodejs npm
+RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash
+RUN apt-get install --no-install-recommends -qy nodejs
 
 # Setting up NodeJs
-RUN npm install -g npm@8.3.1
+RUN npm install -g npm@8.15.0
 
 #RUN wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb &&\
 #    dpkg -i google-chrome-stable_current_amd64.deb; \
