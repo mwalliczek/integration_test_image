@@ -38,8 +38,8 @@ RUN rm -rf /var/lib/mysql; \
 	fi; \
 	mysql_install_db --user=mysql --ldata=/var/lib/mysql > /dev/null
 
-service dbus start
-export DBUS_SESSION_BUS_ADDRESS=unix:path=/var/run/dbus/system_bus_socket
+RUN service dbus start
+ARG DBUS_SESSION_BUS_ADDRESS=unix:path=/var/run/dbus/system_bus_socket
 
 # Command prompt
 CMD /bin/bash
