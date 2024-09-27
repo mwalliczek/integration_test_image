@@ -1,4 +1,4 @@
-FROM debian:testing
+FROM debian:stable
 
 ARG DEBIAN_FRONTEND=noninteractive
 
