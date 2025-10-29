@@ -30,4 +30,4 @@ jobs:
         with:
           push: true
           platforms: linux/amd64
-          tags: mwalliczek/integration_test:latest
+          tags: mwalliczek/integration_test:17
