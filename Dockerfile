@@ -1,9 +1,9 @@
-FROM debian:oldstable
+FROM debian:stable
 
 ARG DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && \
-    apt-get install --no-install-recommends -qy curl openssh-client openjdk-17-jre-headless mariadb-server chromium maven
+    apt-get install --no-install-recommends -qy curl openssh-client openjdk-21-jre-headless mariadb-server chromium maven
     
 RUN curl -fsSL https://deb.nodesource.com/setup_22.x | bash
 RUN apt-get install --no-install-recommends -qy nodejs
