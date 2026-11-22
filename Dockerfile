@@ -11,6 +11,9 @@ RUN apt-get install --no-install-recommends -qy nodejs
 # Setting up NodeJs
 RUN npm install -g npm
 
+# Install Chrome devtools mcp
+RUN npm install -g chrome-devtools-mcp@latest
+
 #RUN wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb &&\
 #    dpkg -i google-chrome-stable_current_amd64.deb; \
 #	apt-get -fqy --no-install-recommends install 
